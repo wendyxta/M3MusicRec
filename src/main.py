@@ -11,6 +11,12 @@ You will implement the functions in recommender.py:
 
 from recommender import load_songs, recommend_songs
 
+taste_profile = {
+    "favorite_genre": "Pop",
+    "favorite_mood": "happy",
+    "target_energy": 0.8,
+    "likes_acoustic": True
+}
 
 def main() -> None:
     songs = load_songs("data/songs.csv") 

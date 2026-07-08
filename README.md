@@ -22,13 +22,36 @@ Explain your design in plain language.
 Some prompts to answer:
 
 - What features does each `Song` use in your system
-  - For example: genre, mood, energy, tempo
 - What information does your `UserProfile` store
 - How does your `Recommender` compute a score for each song
 - How do you choose which songs to recommend
 
-You can include a simple diagram or bullet list if helpful.
+------------------------------------------------------------
+Understanding the Problem (Phase 1)
+  My system will use the genre, mood, energym valence, danceability, tempo, and accusticness from each song. The UserProfile stores the user's music taste preference, based on their favorite genre, favorite mood, target energy, and whether or not they like acoustics. 
+  The Recommender will calculate a score for each system based on weightings and mathematical formulas. The genre and mood categories are most important so they will have the highest weights at 30%, and 20% respectively. Energy and valence are the most important, and can both be weighted at 15%. Danceability, accousticness, and tempo are less important, and can be weighted at 10%, 7%, and 3% respectively. To calculate the score, the system would mulitply each category weight with the corresponding details for the specific song, and add together all the categories. 
+  Both a scoring rule and ranking rule is needed since the scoring rule scores each song based on how well it matches the user's preferences, and the ranking rule scores songs against each other to determine the order to recommend songs for the user. I would use the scoring rule first to find songs that best match the user preferences. Then use the ranking rule to recommend the songs that are closest to the user's preferences first.
 
+---------------------------------------------------------
+Algorithmn Logic (Phase 2)
+Scoring of points based on weights:
+  Feature	| Weight| Points Awarded
+  Genre	| 30% |	3.0
+  Mood | 20% |	2.0
+  Energy	| 15%	| 1.5
+  Valence	| 15%	| 1.5
+  Danceability	| 10%	|1.0
+  Acousticness	| 7%	|0.7
+  Tempo	| 3%	| 0.3
+  Total	| 100%	|10.0 (max)
+
+Bias
+- Since mood and genre are the highest weighted categories, the system may miss songs that may directly align with the user's energy, valence, danceability, tempo, and accousticness preference.
+
+Data Flow
+1. Input user preferences --> create user profiles
+2. Loop through songs.csv --> use scoring logic to score each song based on user preferences
+3. Output list of songs in order with closest matches to recommend first.
 ---
 
 ## Getting Started

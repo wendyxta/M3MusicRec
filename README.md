@@ -11,7 +11,7 @@ Your goal is to:
 - Evaluate what your system gets right and wrong
 - Reflect on how this mirrors real world AI recommenders
 
-Replace this paragraph with your own summary of what your version does.
+This version imports songs from a CSV file, constructs a user profile for music taste. It will then score the songs from the CSV based on how well they much the user's music taste. Lastly, it will recommend the top 5 songs that match closest with the user's music profile.
 
 ---
 
@@ -92,7 +92,34 @@ You can add more tests in `tests/test_recommender.py`.
 ## Sample Recommendation Output
 
 Paste a sample of your recommender's output here as a text block so a reader can see what it produces:
+Loading songs from data/songs.csv...
+Loaded songs: 20
 
+=============================================
+   Top 5 Recommendations For You
+=============================================
+
+#1  Golden Hour — Paper Lanterns
+    Score : 4.49 / 5.00
+    Why   : genre match (+2.0), mood match (+1.5), energy proximity (+0.99)
+
+#2  Sunrise City — Neon Echo
+    Score : 4.48 / 5.00
+    Why   : genre match (+2.0), mood match (+1.5), energy proximity (+0.98)
+
+#3  Gym Hero — Max Pulse
+    Score : 2.87 / 5.00
+    Why   : genre match (+2.0), energy proximity (+0.87)
+
+#4  Late Night Groove — Max Pulse
+    Score : 2.85 / 5.00
+    Why   : genre match (+2.0), energy proximity (+0.85)
+
+#5  Electric Daydream — Neon Echo
+    Score : 2.50 / 5.00
+    Why   : mood match (+1.5), energy proximity (+1.0)
+
+=============================================
 ```
 # e.g.:
 # User profile: genre=indie, mood=chill, energy=low

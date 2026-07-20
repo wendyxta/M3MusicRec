@@ -14,12 +14,29 @@ try:
 except ModuleNotFoundError:
     from src.recommender import load_songs, recommend_songs
 
-taste_profile = {
-    "favorite_genre": "Pop",
+high_energy_pop = {
+    "favorite_genre": "pop",
     "favorite_mood": "happy",
-    "target_energy": 0.8,
-    "likes_acoustic": True
+    "target_energy": 0.9,
+    "likes_acoustic": False,
 }
+
+chill_lofi = {
+    "favorite_genre": "lofi",
+    "favorite_mood": "chill",
+    "target_energy": 0.35,
+    "likes_acoustic": True,
+}
+
+deep_intense_rock = {
+    "favorite_genre": "rock",
+    "favorite_mood": "intense",
+    "target_energy": 0.95,
+    "likes_acoustic": False,
+}
+
+# Active profile — swap to any of the three above to test
+taste_profile = deep_intense_rock
 
 def main() -> None:
     songs = load_songs("data/songs.csv")

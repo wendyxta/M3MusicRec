@@ -141,6 +141,119 @@ Use this section to document the experiments you ran. For example:
 - What happened when you added tempo or valence to the score
 - How did your system behave for different types of users
 
+- experiment: changing the weight on genre from 2.0 to 0.5
+- result: The cores are much lower overall, and the genre no longers seems as important. The song recommendations don't seem to be as reflective of the user's actual music taste.
+- sample output:
+=============================================
+   Top 5 Recommendations For You
+=============================================
+
+#1  Thunder Clap — Voltline
+    Score : 3.00 / 5.00
+    Why   : genre match (+0.5), mood match (+1.5), energy proximity (+1.0)
+
+#2  Storm Runner — Voltline
+    Score : 2.96 / 5.00
+    Why   : genre match (+0.5), mood match (+1.5), energy proximity (+0.96)
+
+#3  Desert Highway — Sandstone Kings
+    Score : 2.93 / 5.00
+    Why   : genre match (+0.5), mood match (+1.5), energy proximity (+0.93)
+
+#4  Gym Hero — Max Pulse
+    Score : 2.48 / 5.00
+    Why   : mood match (+1.5), energy proximity (+0.98)
+
+#5  Sunrise City — Neon Echo
+    Score : 0.87 / 5.00
+    Why   : energy proximity (+0.87)
+
+=============================================
+
+
+Experiment 2: trying out different user profiles
+
+test User profile 1: high energy pop
+=============================================
+   Top 5 Recommendations For You
+=============================================
+
+#1  Sunrise City — Neon Echo
+    Score : 4.42 / 5.00
+    Why   : genre match (+2.0), mood match (+1.5), energy proximity (+0.92)
+
+#2  Golden Hour — Paper Lanterns
+    Score : 4.39 / 5.00
+    Why   : genre match (+2.0), mood match (+1.5), energy proximity (+0.89)
+
+#3  Gym Hero — Max Pulse
+    Score : 2.97 / 5.00
+    Why   : genre match (+2.0), energy proximity (+0.97)
+
+#4  Late Night Groove — Max Pulse
+    Score : 2.75 / 5.00
+    Why   : genre match (+2.0), energy proximity (+0.75)
+
+#5  Electric Daydream — Neon Echo
+    Score : 2.40 / 5.00
+    Why   : mood match (+1.5), energy proximity (+0.9)
+
+=============================================
+
+test user profile 2: chill lofi
+=============================================
+   Top 5 Recommendations For You
+=============================================
+
+#1  Library Rain — Paper Lanterns
+    Score : 5.00 / 5.00
+    Why   : genre match (+2.0), mood match (+1.5), energy proximity (+1.0), acoustic match (+0.5)
+
+#2  Midnight Coding — LoRoom
+    Score : 4.93 / 5.00
+    Why   : genre match (+2.0), mood match (+1.5), energy proximity (+0.93), acoustic match (+0.5)
+
+#3  Study Hall — LoRoom
+    Score : 3.47 / 5.00
+    Why   : genre match (+2.0), energy proximity (+0.97), acoustic match (+0.5)
+
+#4  Focus Flow — LoRoom
+    Score : 3.45 / 5.00
+    Why   : genre match (+2.0), energy proximity (+0.95), acoustic match (+0.5)
+
+#5  Spacewalk Thoughts — Orbit Bloom
+    Score : 2.93 / 5.00
+    Why   : mood match (+1.5), energy proximity (+0.93), acoustic match (+0.5)
+
+=============================================
+
+test profile 3: deep_intense_rock
+
+=============================================
+   Top 5 Recommendations For You
+=============================================
+
+#1  Thunder Clap — Voltline
+    Score : 4.50 / 5.00
+    Why   : genre match (+2.0), mood match (+1.5), energy proximity (+1.0)
+
+#2  Storm Runner — Voltline
+    Score : 4.46 / 5.00
+    Why   : genre match (+2.0), mood match (+1.5), energy proximity (+0.96)
+
+#3  Desert Highway — Sandstone Kings
+    Score : 4.43 / 5.00
+    Why   : genre match (+2.0), mood match (+1.5), energy proximity (+0.93)
+
+#4  Gym Hero — Max Pulse
+    Score : 2.48 / 5.00
+    Why   : mood match (+1.5), energy proximity (+0.98)
+
+#5  Sunrise City — Neon Echo
+    Score : 0.87 / 5.00
+    Why   : energy proximity (+0.87)
+
+=============================================
 ---
 
 ## Limitations and Risks
